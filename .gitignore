@@ -1,0 +1,7 @@
+# Ignore duplicate/minigame asset folder
+minigame/assets/
+
+# Node, Python, OS defaults (optional)
+node_modules/
+__pycache__/
+.DS_Store
