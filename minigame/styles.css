@@ -1,0 +1,24 @@
+:root{--bg:#fff9f2;--accent:#e2572e;--muted:#666}
+*{box-sizing:border-box}
+html,body,#app{height:100%;margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial}
+body{background:linear-gradient(#fff,#fff9f2);display:flex;align-items:center;justify-content:center}
+#app{width:100%;height:100%;max-width:540px;position:relative}
+#canvas-wrap{position:absolute;inset:0;padding:12px;pointer-events:none}
+canvas{width:100%;height:100%;display:block;border-radius:12px;background:linear-gradient(#fff,#fff9f2);touch-action:none}
+body.game-active #canvas-wrap{pointer-events:auto}
+
+.screen{position:absolute;left:12px;right:12px;top:12px;padding:16px;background:rgba(255,255,255,0.95);border-radius:12px;box-shadow:0 6px 18px rgba(0,0,0,0.08);text-align:center;display:none}
+.screen.active{display:block}
+.muted{color:var(--muted);margin-top:0}
+.btn{font-size:18px;padding:12px 18px;border-radius:10px;background:var(--accent);color:#fff;border:0}
+
+#hud{position:absolute;left:12px;right:12px;top:12px;display:none;justify-content:space-between;pointer-events:none}
+#timer,#score{background:rgba(255,255,255,0.9);padding:8px 12px;border-radius:10px;font-weight:700}
+
+.targets{display:flex;gap:8px;justify-content:center;align-items:center}
+.targets .tile{width:56px;height:56px;border-radius:8px;background:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 3px 8px rgba(0,0,0,0.06)}
+
+@media (orientation:landscape){#app{max-width:840px}}
+
+/* show HUD only during gameplay */
+body.game-active #hud{display:flex}
